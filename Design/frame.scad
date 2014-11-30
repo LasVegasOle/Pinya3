@@ -16,7 +16,7 @@ frame();
 module frame(){
   difference(){
     union(){ // Add
-      %frame_vertical_profiles();
+      frame_vertical_profiles();
       frame_horizontal_profiles();
       }
     union(){ // Substract
@@ -59,21 +59,21 @@ module frame_horizontal_length_profiles() {
 }
 
 module frame_vertical_profile() {
-  color("DimGray",alpha)
+  color("DimGray",frame_alpha)
   cube([frame_profile_width, 
         frame_profile_width, 
         frame_vertical_profiles_length], center=true);
 }
 
 module frame_horizontal_width_profile() {
-  color("LightSlateGray",alpha)
+  color("LightSlateGray",frame_alpha)
   cube([frame_horizontal_witdh_profiles_length,  
         frame_profile_width, 
         frame_profile_width], center=true);
 }
 
 module frame_horizontal_length_profile() {
-  color("Gainsboro",alpha)
+  color("Gainsboro",frame_alpha)
   cube([frame_profile_width,  
         frame_horizontal_length_profiles_length, 
         frame_profile_width], center=true);

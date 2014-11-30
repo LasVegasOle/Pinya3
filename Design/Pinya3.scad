@@ -11,6 +11,7 @@
 
 use <frame.scad>
 use <delta_beam.scad>
+use <carousel.scad>
 
 
 // Colors
@@ -25,6 +26,8 @@ module Pinya3(){
     union(){ // Add
         frame();
         delta_beam();
+        carousel();
+        printing_area();
       }
     union(){ // Substract
       }

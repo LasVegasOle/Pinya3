@@ -26,7 +26,7 @@ module delta_beam_support() {
 }
 
 module delta_beam_profile() {
-  color("DarkSlateGray",alpha)
+  color("DarkSlateGray", delta_beam_alpha)
   cube([delta_beam_length,  
         delta_beam_profile_width, 
         frame_profile_width], center=false);
