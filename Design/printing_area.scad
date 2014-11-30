@@ -15,7 +15,9 @@ module printing_area(){
       translate([printing_area_x_displacement, 
                  0,
                  (frame_height - printing_area_z)/2 
-                 - printing_area_distance_from_motors_base])
+                 - printing_area_distance_from_motors_base
+                 + motors_base_thickness
+                 ])
         cube([printing_area_x, printing_area_y, printing_area_z], center=true);
       }
     union(){ // Substract
