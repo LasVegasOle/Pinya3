@@ -12,6 +12,8 @@
 use <frame.scad>
 use <delta_beam.scad>
 use <carousel.scad>
+use <printing_area.scad>
+include <variables.scad>
 
 
 // Colors

@@ -18,7 +18,8 @@ frame_lenght = 250;
 
 // DELTA BEAM
 delta_beam_alpha = alpha;
-delta_beam_length = 700;
+delta_beam_length = 350 + frame_width/2;
+echo("Delta beam lenght = ", delta_beam_length);
 delta_beam_profile_width = 100;
 delta_beam_under_frame = 1; // 1 = Beam under frame or 0 = Beam on frame
 
@@ -29,3 +30,19 @@ carousel_offset_rotation = 0; // in degrees
 carousel_rad = frame_width/2 - 30;//160;
 carousel_tool_height = 200;
 carousel_tool_rad = 40;
+
+// PRINTING AREA
+// from: https://www.marginallyclever.com/other/samples/fk-ik-test.html
+// Base radius (f) = 100mm
+// End Effector radius (e) = 30mm
+// Bice length (rf) = 320mm
+// Forearm length = 350mm
+//X=-194.288 to 194.288 mm
+//Y=-194.288 to 194.288 mm
+//Z=-540.222 to -151.646 mm
+printing_area_alpha = 0.2;
+printing_area_x = 195*2;
+printing_area_y = 195*2;
+printing_area_z = 540-151;
+printing_area_distance_from_motors_base = 151;
+printing_area_x_displacement = 250;
