@@ -17,3 +17,7 @@ frame_height = 430;
 frame_width = 430;
 frame_lenght = 430;
 
+// DELTA BEAM
+delta_beam_length = 800;
+delta_beam_profile_width = 100;
+delta_beam_under_frame = 1; // 1 = Beam under frame, 0 = Beam on frame

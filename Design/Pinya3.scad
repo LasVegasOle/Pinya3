@@ -10,6 +10,7 @@
   //not execute any commands other than those definitions.
 
 use <frame.scad>
+use <delta_beam.scad>
 
 
 // Colors
@@ -23,6 +24,7 @@ module Pinya3(){
   difference(){
     union(){ // Add
         frame();
+        delta_beam();
       }
     union(){ // Substract
       }
