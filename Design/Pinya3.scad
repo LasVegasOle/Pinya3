@@ -14,6 +14,7 @@ use <delta_beam.scad>
 use <carousel.scad>
 use <printing_area.scad>
 use <motors_base.scad>
+use <forearm.scad>
 include <variables.scad>
 
 
@@ -29,9 +30,10 @@ module Pinya3(){
     union(){ // Add
         frame();
         delta_beam();
-        //carousel();
-        //printing_area();
         motors_base();
+        forearm();
+        //carousel();
+        printing_area();
         //delta_robot();
       }
     union(){ // Substract
