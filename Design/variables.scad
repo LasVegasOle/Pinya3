@@ -12,9 +12,9 @@ alpha = 0.7;
 frame_alpha = alpha;
 frame_profile_width = 20;
 
-frame_height = 340;
+frame_height = 370;
 frame_width = 250;  // 250mm -> 7capsules~de 8cm
-frame_lenght = 200b ;
+frame_lenght = 200;
 
 // PRINTING AREA
 // from: https://www.marginallyclever.com/other/samples/fk-ik-test.html
@@ -38,13 +38,13 @@ printing_area_x_displacement = frame_width/2 + printing_area_x/2;
 // FOREARM 
 forearm_alpha = alpha;
 forearm_length = 200;
-forearm_rad = 30;
-forearm_motors_joint_rad = 80;
+forearm_rad = 25;
+forearm_motors_joint_rad = 60;
 
 // MOTORS BASE
 motors_base_alpha = alpha;
-motors_base_thickness = 5;
-motors_base_rad = forearm_motors_joint_rad + 10;
+motors_base_thickness = 6;
+motors_base_rad = forearm_motors_joint_rad;
 
 // DELTA BEAM
 delta_beam_alpha = alpha;
@@ -52,8 +52,10 @@ delta_beam_length = printing_area_x_displacement
                     + forearm_motors_joint_rad 
                     + frame_width/2;
 echo("Delta beam lenght = ", delta_beam_length);
-delta_beam_profile_width = frame_profile_width*2;
+delta_beam_profile_width = frame_profile_width*3; //60cm
 delta_beam_under_frame = 0; // 1 = Beam under frame or 0 = Beam on frame
+delta_beam_bolt_rad = 4;
+delta_beam_distance_btw_slots = 20;
 
 
 // CAROUSEL
