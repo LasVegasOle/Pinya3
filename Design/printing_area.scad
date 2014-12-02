@@ -17,6 +17,7 @@ module printing_area(){
                  (frame_height - printing_area_z)/2 
                  - printing_area_distance_from_motors_base
                  + motors_base_thickness
+                - (delta_beam_under_frame -1)*2*frame_profile_width
                  ])
         cube([printing_area_x, printing_area_y, printing_area_z], center=true);
       }

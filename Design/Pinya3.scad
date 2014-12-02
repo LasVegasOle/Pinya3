@@ -32,7 +32,7 @@ module Pinya3(){
         delta_beam();
         motors_base();
         forearm();
-        //carousel();
+        carousel();
         printing_area();
         //delta_robot();
       }
