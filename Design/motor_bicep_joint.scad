@@ -44,12 +44,12 @@ module motor_bicep_joint_bicep_holder() {
 
 module motor_bicep_joint_shaft_hole() {
   difference() {
-  cylinder(h = motor_bicep_joint_shaft_holder_thickness * 3,
-           r = stepper_shaft_diameter/2, center=true);
-  translate([motor_bicep_joint_shaft_flat_displecement, 0, 0])
-    cube([motor_bicep_joint_shaft_nut_thickness, 
-          motor_bicep_joint_shaft_nut_width, 
-          motor_bicep_joint_shaft_holder_thickness], center=true);  
+    cylinder(h = motor_bicep_joint_shaft_holder_thickness * 3,
+             r = stepper_shaft_diameter/2, center=true, $fn = 25);
+    translate([motor_bicep_joint_shaft_flat_displecement, 0, 0])
+      cube([motor_bicep_joint_shaft_nut_thickness, 
+            motor_bicep_joint_shaft_nut_width, 
+            motor_bicep_joint_shaft_holder_thickness], center=true);  
   }
 }
 
