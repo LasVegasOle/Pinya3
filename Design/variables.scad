@@ -38,8 +38,8 @@ printing_area_x_displacement = frame_width/2 + printing_area_x/2;
 // FOREARM 
 forearm_alpha = alpha;
 forearm_length = 200;
-forearm_rad = 25;
-forearm_motors_joint_rad = 60;
+forearm_rad = 4;
+forearm_motors_joint_rad = 25;
 
 // MOTORS BASE
 motors_base_alpha = alpha;
@@ -66,3 +66,32 @@ carousel_rad = frame_width-20;//160;
 carousel_tool_height = 180;
 carousel_tool_rad = 40;
 
+// GEARED STEPPER
+stepper_shaft_diameter = 8;
+
+// MOTOR BICEP JOINT
+motor_bicep_joint_shaft_holder_diameter = 21;
+motor_bicep_joint_shaft_holder_thickness = 12;
+
+motor_bicep_joint_bicep_holder_width = motor_bicep_joint_shaft_holder_thickness;
+motor_bicep_joint_bicep_holder_length = 20 + motor_bicep_joint_shaft_holder_diameter/2;
+
+motor_bicep_joint_bicep_insert_lenght = 20;
+
+motor_bicep_joint_shaft_bolt_lenght = 12;
+motor_bicep_joint_shaft_bolt_diameter = 3.25;
+
+motor_bicep_joint_bicep_bolt_diameter = motor_bicep_joint_shaft_bolt_diameter;
+motor_bicep_joint_bicep_bolt_lenght = 30;
+
+motor_bicep_joint_shaft_nut_thickness = 3;
+motor_bicep_joint_shaft_nut_width = 6.2;
+motor_bicep_joint_shaft_nut_hole_height = 30;
+motor_bicep_joint_shaft_nut_displacement = stepper_shaft_diameter/3 + 
+            (motor_bicep_joint_shaft_holder_diameter/2 - stepper_shaft_diameter/2)/2;
+motor_bicep_joint_bicep_nut_diameter = 6.5;
+motor_bicep_joint_bicep_nut_thickness = motor_bicep_joint_shaft_nut_thickness;
+
+motor_bicep_joint_shaft_flat_displecement = -4.6;
+// BICEP
+bicep_diameter = 8;

@@ -17,7 +17,6 @@ use <motors_base.scad>
 use <forearm.scad>
 include <variables.scad>
 
-
 // Colors
 // Scheme: http://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language#color
 
@@ -31,7 +30,7 @@ module Pinya3(){
         frame();
         delta_beam();
         motors_base();
-        //forearm();
+        forearm();
         //carousel();
         printing_area();
         //delta_robot();

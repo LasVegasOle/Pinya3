@@ -9,7 +9,7 @@ include <variables.scad>
 // motors dimensions
 //http://www.aliexpress.com/item/1-68A-Gear-ratio-5-1-Planetary-Gearbox-stepper-motor-Nema-17-Planetary-geared-stepper-3d/1794868710.html
 
-position_steppers_rad = forearm_rad;
+position_steppers_rad = forearm_motors_joint_rad;
 
 motors_base_platform();
 
