@@ -40,6 +40,7 @@ forearm_alpha = alpha;
 forearm_length = 200;
 forearm_rad = 4;
 forearm_motors_joint_rad = 25;
+forearm_ball_diameter = 12;
 
 // MOTORS BASE
 motors_base_alpha = alpha;
@@ -95,3 +96,26 @@ motor_bicep_joint_bicep_nut_thickness = motor_bicep_joint_shaft_nut_thickness;
 motor_bicep_joint_shaft_flat_displecement = -4.6;
 // BICEP
 bicep_diameter = 8;
+
+// MAGNET
+magnet_clearance = 0.25;
+magnet_cube_side = magnet_clearance + 10;
+
+// BICEP FOREARM JOINT
+bfj_distance_btw_forearms = 60;
+bfj_width = 80;
+bfj_thickness = 20;
+bfj_forearms_joint_ball_sliding_height = 2.5;
+bfj_height = magnet_cube_side/2 + bfj_forearms_joint_ball_sliding_height;
+bfj_screw_diameter = 6;
+
+// bfj_ball_sliding_rad calculation
+R = forearm_ball_diameter/2;
+r = bfj_forearms_joint_ball_sliding_height;
+r_prima = R - r;
+echo("r_prima", r_prima);
+cosx = r_prima/R;
+x = acos(cosx);
+echo("x", x);
+bfj_ball_sliding_rad = R*sin(x);
+echo(bfj_ball_sliding_rad);
