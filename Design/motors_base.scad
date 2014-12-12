@@ -9,11 +9,12 @@ include <variables.scad>
 // motors dimensions
 //http://www.aliexpress.com/item/1-68A-Gear-ratio-5-1-Planetary-Gearbox-stepper-motor-Nema-17-Planetary-geared-stepper-3d/1794868710.html
 
-position_steppers_rad = forearm_motors_joint_rad;
+position_steppers_rad = bicep_motors_joint_rad;
 
 motors_base_platform();
 
 module motors_base_platform(){
+  rotate([0, 0, 180])
   difference(){
     union(){ // Add
         motors_base_body();
@@ -30,7 +31,7 @@ module motors_base() {
   //color("RoyalBlue", motors_base_alpha)
 
   translate([printing_area_x_displacement, 0, 
-            ((frame_height - motors_base_thickness)/2) 
+            ((frame_height)/2 - motors_base_thickness) 
             - delta_beam_under_frame*2*frame_profile_width
             ])
     mirror([0, 0, 1])
@@ -109,10 +110,10 @@ module stepper_bracket() {
   difference() {
     union() {
       // base
-      cube([50, 42, 5], center=true);
+      cube([50, 42, stepper_bracket_base_thickness], center=true);
       // motor holder(vertical wall)
       translate([ -50/2 + 5/2, 0, +50/2 -5/2]) 
-        cube([5, 42, 50], center=true);
+        cube([stepper_bracket_base_thickness, 42, 50], center=true);
     }
     union() {
       // shaft hole

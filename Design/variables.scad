@@ -12,7 +12,7 @@ alpha = 0.7;
 frame_alpha = alpha;
 frame_profile_width = 20;
 
-frame_height = 370;
+frame_height = 410;
 frame_width = 250;  // 250mm -> 7capsules~de 8cm
 frame_lenght = 200;
 
@@ -26,7 +26,7 @@ frame_lenght = 200;
 // X=-128.225 to 128.225 mm 
 // Y=-128.225 to 128.225 mm
 // Z=-387.23 to -130.781 mm
-printing_area_alpha = 0.2;
+printing_area_alpha = 0.1;
 printing_area_x = 128*2;//195*2;
 printing_area_y = 128*2;//195*2;
 printing_area_distance_from_motors_base = 130;//151
@@ -37,15 +37,24 @@ printing_area_x_displacement = frame_width/2 + printing_area_x/2;
 
 // FOREARM 
 forearm_alpha = alpha;
-forearm_length = 200;
+forearm_length = 260;
 forearm_rad = 4;
 forearm_motors_joint_rad = 25;
 forearm_ball_diameter = 12;
+
+// BICEP
+bicep_length = 200;
+bicep_rad = forearm_rad;
+bicep_motors_joint_rad = forearm_motors_joint_rad;
+bicep_motors_joint_degree = 60;
 
 // MOTORS BASE
 motors_base_alpha = alpha;
 motors_base_thickness = 6;
 motors_base_rad = forearm_motors_joint_rad;
+
+stepper_bracket_base_thickness = 5;
+stepper_motor_width = 42.3;
 
 // DELTA BEAM
 delta_beam_alpha = alpha;
@@ -98,7 +107,7 @@ motor_bicep_joint_shaft_flat_displecement = -4.6;
 bicep_diameter = 8;
 
 // MAGNET
-magnet_clearance = 0.25;
+magnet_clearance = 0.5;
 magnet_cube_side = magnet_clearance + 10;
 
 // BICEP FOREARM JOINT
@@ -119,3 +128,4 @@ x = acos(cosx);
 echo("x", x);
 bfj_ball_sliding_rad = R*sin(x);
 echo(bfj_ball_sliding_rad);
+
