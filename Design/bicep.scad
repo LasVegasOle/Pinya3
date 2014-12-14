@@ -4,11 +4,12 @@
 // version: 0.1
 // w3b: 3digitalcooks.com
 
+use <bicep_forearm_joint.scad>
 include <variables.scad>
 
 biceps();
 
-module forearm(){
+module biceps(){
   difference(){
     union(){ // Add
       bicep();
@@ -17,7 +18,6 @@ module forearm(){
     }
   }
 }
-
 
 module bicep() {
       color("OrangeRed", forearm_alpha)
@@ -31,7 +31,11 @@ module bicep() {
                    - stepper_bracket_base_thickness
                    - stepper_motor_width/2])
         rotate([0, bicep_motors_joint_degree, 120*i +120*i - 60])
-          mirror([0, 0, 1])
+          mirror([0, 0, 1]){
             cylinder(h = bicep_length, r = bicep_rad, center=false);
+            translate([0, 0, bicep_length - bfj_height/2])
+              rotate([270, 0, 90])
+              bicep_forearm_joint();
+          }
       }
 }

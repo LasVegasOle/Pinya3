@@ -13,7 +13,7 @@ frame_alpha = alpha;
 frame_profile_width = 20;
 
 frame_height = 410;
-frame_width = 250;  // 250mm -> 7capsules~de 8cm
+frame_width = 200;  // 250mm -> 7capsules~de 8cm
 frame_lenght = 200;
 
 // PRINTING AREA
@@ -33,7 +33,8 @@ printing_area_distance_from_motors_base = 130;//151
 printing_area_z_max = 387;
 printing_area_z = printing_area_z_max - printing_area_distance_from_motors_base;//540-151;
 echo("printing z =",printing_area_z);
-printing_area_x_displacement = frame_width/2 + printing_area_x/2;
+printing_area_x_displacement = frame_width/2 + printing_area_x/2 + 17;
+echo("printing area x displecement", printing_area_x_displacement);
 
 // FOREARM 
 forearm_alpha = alpha;
@@ -41,12 +42,13 @@ forearm_length = 260;
 forearm_rad = 4;
 forearm_motors_joint_rad = 25;
 forearm_ball_diameter = 12;
+forearm_bicep_joint_degree = 150;
 
 // BICEP
 bicep_length = 200;
 bicep_rad = forearm_rad;
 bicep_motors_joint_rad = forearm_motors_joint_rad;
-bicep_motors_joint_degree = 60;
+bicep_motors_joint_degree = 100;
 
 // MOTORS BASE
 motors_base_alpha = alpha;
@@ -111,12 +113,12 @@ magnet_clearance = 0.5;
 magnet_cube_side = magnet_clearance + 10;
 
 // BICEP FOREARM JOINT
-bfj_distance_btw_forearms = 60;
-bfj_width = 80;
+bfj_distance_btw_forearms = 50;
+bfj_width = bfj_distance_btw_forearms + 2*magnet_cube_side;
 bfj_thickness = 20;
 bfj_forearms_joint_ball_sliding_height = 2.5;
 bfj_height = magnet_cube_side/2 + bfj_forearms_joint_ball_sliding_height;
-bfj_screw_diameter = 6;
+bfj_screw_diameter = 5;
 
 // bfj_ball_sliding_rad calculation
 R = forearm_ball_diameter/2;
@@ -129,3 +131,27 @@ echo("x", x);
 bfj_ball_sliding_rad = R*sin(x);
 echo(bfj_ball_sliding_rad);
 
+// END EFFECTOR
+ef_rad =  66;
+ef_distance_btw_forearms = bfj_distance_btw_forearms;
+ef_side_width = bfj_distance_btw_forearms + 20;
+ef_magnet_hole_edge_offset = magnet_cube_side/2 + 2;
+
+ef_blocking_hole_diameter = 3.33;
+ef_blocking_hole_pos_diameter = 25;
+
+ef_cutted_corners_pos_diameter = 35;
+
+ef_tool_ole_rad = 21;
+
+print_offset = 0.33;
+
+magnet_rad = 8/2 + print_offset;
+magnet_position_rad = 20;
+magnet_height = 6 + print_offset;
+
+ef_ball_sliding_magnet_clearance = bfj_forearms_joint_ball_sliding_height;
+ef_ball_sliding_rad = bfj_ball_sliding_rad;
+
+ef_thickness = 5.5 + ef_ball_sliding_magnet_clearance;
+echo(ef_thickness);

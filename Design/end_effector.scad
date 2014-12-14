@@ -14,7 +14,7 @@ ef_magnet_hole_edge_offset = magnet_cube_side/2 + 2;
 ef_blocking_hole_diameter = 3.33;
 ef_blocking_hole_pos_diameter = 25;
 
-ef_cutted_corners_pos_diameter = 35;
+ef_cutted_corners_pos_diameter = 45;
 
 ef_tool_ole_rad = 21;
 
@@ -30,9 +30,15 @@ ef_ball_sliding_rad = bfj_ball_sliding_rad;
 ef_thickness = 5.5 + ef_ball_sliding_magnet_clearance;
 echo(ef_thickness);
 
-end_effector();
+end_effector_part();
 
-module end_effector(){
+module end_effector() {
+  translate([printing_area_x_displacement, 0, 40])
+    rotate([0, 0, 60])
+      end_effector_part();
+}
+
+module end_effector_part(){
   difference(){
     union(){ // Add
       ef_body();
@@ -107,7 +113,7 @@ module ef_cutted_corners(rotation = 0){
     // Deleting unwanted parts from orignal body
     rotate([0, 0, x]) {
       translate([ef_rad, 0, 0]) {
-        cube(size=[ef_rad/2, ef_rad, ef_thickness*2], center=true);
+        cube(size=[ef_cutted_corners_pos_diameter, ef_rad, ef_thickness*2], center=true);
       }
     }
   }

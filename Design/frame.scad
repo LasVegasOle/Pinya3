@@ -8,8 +8,11 @@ include <variables.scad>
 
 // Local variables
 frame_vertical_profiles_length = frame_height;
+echo("vertical profile length =",frame_vertical_profiles_length);
 frame_horizontal_witdh_profiles_length = frame_width - 2*frame_profile_width;
+echo("horizontal width profile length", frame_horizontal_witdh_profiles_length);
 frame_horizontal_length_profiles_length = frame_lenght - 2*frame_profile_width;
+echo("horizontal length profile length", frame_horizontal_length_profiles_length);
 
 frame();
 

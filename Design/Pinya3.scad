@@ -16,6 +16,8 @@ use <printing_area.scad>
 use <motors_base.scad>
 use <forearm.scad>
 use <bicep.scad>
+use <end_effector.scad>
+
 include <variables.scad>
 
 // Colors
@@ -31,11 +33,10 @@ module Pinya3(){
         frame();
         delta_beam();
         motors_base();
-        bicep();
-        //forearm();
-        //carousel();
+        biceps();
+        forearms();
+        end_effector();
         printing_area();
-        //delta_robot();
       }
     union(){ // Substract
       }

@@ -6,6 +6,10 @@
 
 include <variables.scad>
 
+module bicep_forearm_joints() {
+  bicep_forearm_joint();
+}
+
 bicep_forearm_joint();
 
 module bicep_forearm_joint(){
@@ -30,7 +34,7 @@ module bfj_body() {
 
 // SUBSTRACT
 module bfj_magnets_holes() {
-  #for (i = [-1,1]) {
+  for (i = [-1,1]) {
     translate([i*bfj_distance_btw_forearms/2, 
                0, 
                bfj_height/2])
@@ -41,6 +45,7 @@ module bfj_magnets_holes() {
 }
 
 module bfj_bicep_screw_hole() {
+  rotate([90, 0, 0])
   cylinder(h = bfj_height*3, r = bfj_screw_diameter/2, center=true, $fn = 25);
 }
 
